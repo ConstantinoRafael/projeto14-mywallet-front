@@ -1,14 +1,14 @@
-import styled from "styled-components";
+//import styled from "styled-components";
 import axios from "axios";
 import { useState } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function SignUpPage() {
   const [name, setName] = useState(undefined);
   const [email, setEmail] = useState(undefined);
   const [password, setPassword] = useState(undefined);
   const [confirmPassword, setConfirmPassword] = useState(undefined);
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
 
   function sendData(e) {
     e.preventDefault();
@@ -22,14 +22,14 @@ export default function SignUpPage() {
 
     const promise = axios.post("http://localhost:5000/sign-up", body);
 
-    promise.then(() => console.log("cadastrado"));
+    promise.then(() => navigate("/"));
 
-    promise.catch((err) => console.log(err));
+    promise.catch((err) => console.log("Deu erro no cadastro"));
   }
 
   return (
     <>
-      <div>MyWallet</div>
+      <h1>MyWallet</h1>
       <form onSubmit={sendData}>
         <input
           placeholder="Nome"
@@ -54,9 +54,9 @@ export default function SignUpPage() {
         <button type="submit">Cadastrar</button>
       </form>
 
-      {/* <Link to={"/sign-in"}>
+      <Link to={"/"}>
         <p>Já tem uma conta? Entre agora!</p>
-      </Link> */}
+      </Link>
     </>
   );
 }
