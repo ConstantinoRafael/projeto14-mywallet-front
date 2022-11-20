@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
     html, body, div, span, applet, object, iframe,
@@ -28,6 +28,9 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	background-color: #8c11be;
+	font-family: 'Lexend Deca', sans-serif;
+	font-family: 'Raleway', sans-serif;
 }
 ol, ul {
 	list-style: none;
@@ -44,6 +47,6 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-`
+`;
 
-export default GlobalStyle
+export default GlobalStyle;

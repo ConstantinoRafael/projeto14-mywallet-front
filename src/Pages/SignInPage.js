@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useUser } from "../Context/User";
 import { Link, useNavigate } from "react-router-dom";
+import styled from "styled-components";
 
 export default function SignInPage() {
   const { setUser } = useUser();
@@ -21,7 +22,7 @@ export default function SignInPage() {
 
     promise.then((res) => {
       setUser(res.data);
-      
+
       navigate("/records");
     });
 
@@ -29,7 +30,7 @@ export default function SignInPage() {
   }
 
   return (
-    <>
+    <SignIn>
       <h1>MyWallet</h1>
 
       <form onSubmit={sendData}>
@@ -49,6 +50,14 @@ export default function SignInPage() {
       <Link to={"/sign-up"}>
         <p>Primeira vez? Cadastre-se!</p>
       </Link>
-    </>
+    </SignIn>
   );
 }
+
+const SignIn = styled.div`
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;

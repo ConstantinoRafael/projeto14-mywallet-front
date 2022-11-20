@@ -26,6 +26,7 @@ export default function InPage() {
     const promise = axios.post("http://localhost:5000/in", body, config);
 
     promise.then((res) => {
+      navigate("/records")
       console.log("entrada cadastrada");
     });
 

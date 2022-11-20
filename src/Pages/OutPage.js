@@ -26,6 +26,7 @@ export default function OutPage() {
     const promise = axios.post("http://localhost:5000/out", body, config);
 
     promise.then((res) => {
+      navigate("/records")
       console.log("entrada cadastrada");
     });
 
