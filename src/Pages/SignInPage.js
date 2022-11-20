@@ -1,11 +1,13 @@
 import axios from "axios";
 import { useState } from "react";
+import { useUser } from "../Context/User";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function SignInPage() {
+  const { setUser } = useUser();
   const [email, setEmail] = useState(undefined);
   const [password, setPassword] = useState(undefined);
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
 
   function sendData(e) {
     e.preventDefault();
@@ -17,9 +19,13 @@ export default function SignInPage() {
 
     const promise = axios.post("http://localhost:5000/sign-in", body);
 
-    promise.then(() => console.log("entrooou"));
+    promise.then((res) => {
+      setUser(res.data);
+      
+      navigate("/records");
+    });
 
-    promise.then((err) => console.log("Deu erro no login"));
+    promise.then((err) => console.log(err.responde.data));
   }
 
   return (
