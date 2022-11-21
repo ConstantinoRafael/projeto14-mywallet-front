@@ -31,21 +31,21 @@ export default function SignInPage() {
 
   return (
     <SignIn>
-      <h1>MyWallet</h1>
+      <Logo>MyWallet</Logo>
 
-      <form onSubmit={sendData}>
-        <input
+      <Form onSubmit={sendData}>
+        <Input
           placeholder="Email"
           type="email"
           onChange={(e) => setEmail(e.target.value)}
-        ></input>
-        <input
+        ></Input>
+        <Input
           placeholder="Senha"
           type="password"
           onChange={(e) => setPassword(e.target.value)}
-        ></input>
-        <button type="submit">Entrar</button>
-      </form>
+        ></Input>
+        <Button type="submit">Entrar</Button>
+      </Form>
 
       <Link to={"/sign-up"}>
         <p>Primeira vez? Cadastre-se!</p>
@@ -55,9 +55,67 @@ export default function SignInPage() {
 }
 
 const SignIn = styled.div`
-  
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  a {
+    text-decoration: none;
+  }
+
+  p{
+    color:#ffffff;
+    font-size: 15px;
+    font-weight: 700;
+  }
 `;
+
+const Logo = styled.h1`
+  color: #ffffff;
+  font-size: 32px;
+  margin-top: 159px;
+  margin-bottom: 24px;
+  font-family: "Saira Stencil One", cursive;
+`;
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  
+`
+
+const Input = styled.input`
+  width: 326px;
+  height: 58px;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 20px;
+  border-radius: 5px;
+  border-style: solid;
+  padding-left: 10px;
+  margin-bottom: 13px;
+
+   ::placeholder{
+    color: #000000;
+    font-size: 20px;
+    font-weight: 400;
+   }
+`
+
+const Button = styled.button`
+  width: 346px;
+  height: 46px;
+  border-radius: 5px;
+  border:none;
+  background-color: #A328D6;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 36px;
+
+`
+
+
+
+
