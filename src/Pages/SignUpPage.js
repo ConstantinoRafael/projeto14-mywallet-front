@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+
 export default function SignUpPage() {
   const [name, setName] = useState(undefined);
   const [email, setEmail] = useState(undefined);
