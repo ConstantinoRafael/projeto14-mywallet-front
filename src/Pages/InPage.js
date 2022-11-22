@@ -24,7 +24,7 @@ export default function InPage() {
       },
     };
 
-    const promise = axios.post("http://localhost:5000/in", body, config);
+    const promise = axios.post("https://mywallet-api-zdo8.onrender.com/in", body, config);
 
     promise.then((res) => {
       navigate("/records")

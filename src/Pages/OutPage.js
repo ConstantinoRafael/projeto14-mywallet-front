@@ -24,7 +24,7 @@ export default function OutPage() {
       },
     };
 
-    const promise = axios.post("http://localhost:5000/out", body, config);
+    const promise = axios.post("https://mywallet-api-zdo8.onrender.com/out", body, config);
 
     promise.then((res) => {
       navigate("/records")

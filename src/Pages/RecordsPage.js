@@ -19,7 +19,7 @@ export default function RecordsPage() {
       },
     };
 
-    const promise = axios.get("http://localhost:5000/records", config);
+    const promise = axios.get("https://mywallet-api-zdo8.onrender.com/records", config);
 
     promise.then((res) => {
       setName(res.data.user.name);

@@ -21,7 +21,7 @@ export default function SignUpPage() {
       confirmPassword: confirmPassword,
     };
 
-    const promise = axios.post("http://localhost:5000/sign-up", body);
+    const promise = axios.post("https://mywallet-api-zdo8.onrender.com/sign-up", body);
 
     promise.then(() => navigate("/"));
 
